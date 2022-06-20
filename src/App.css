@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
+    background-color: aquamarine;
+    height: 100vh;
+}
+/* GLOBAL */
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #f1f1f1;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* MAIN CSS */
+.vglasses__left{
+    background-color: white;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+.vglasses__left .col-4{
+    align-self: center;
+}
+.vglasses__items{
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.vglasses__right{
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.vglasses__model{
+    background-image: url('./../public/glassesImage/model.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
 }
 
-.App-link {
-  color: #61dafb;
+.vglasses__model img{
+    position: absolute;
+    top: 26%;
+    left: 25%;
+    width: 238px;
+    height: 85px;
+    opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.vglasses__card{
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.vglasses__info{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    color: white;
+    padding: 20px;
+    display: none;
+}
+
+#glasses{
+    transition: all 0.5s;
 }
