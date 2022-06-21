@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "./../data/DataGlasses.json";
+import data from "../../data/DataGlasses.json";
 
 export default class BaiTapKinh extends Component {
   constructor(props) {
@@ -30,6 +30,18 @@ export default class BaiTapKinh extends Component {
     });
   };
 
+  renderInfo = () => {
+    return (
+      <div>
+        <h5>{this.state.name}</h5>
+        <p class="my-3">
+          <span class="mr-4">${this.state.price}</span>
+        </p>
+        <p>{this.state.desc}</p>
+      </div>
+    );
+  };
+
   changeGlass = (index) => {
     let imgSource = "./glassesImage/v1.png";
     let nameSource = "";
@@ -51,7 +63,6 @@ export default class BaiTapKinh extends Component {
       desc: descSource,
     });
     document.querySelector(".vglasses__info").style.display = "block";
-    document.querySelector(".vglasses__model").style.display = "block";
   };
 
   render() {
@@ -74,17 +85,7 @@ export default class BaiTapKinh extends Component {
                 <img src={this.state.img} alt="" />
               </div>
               <div id="glassesInfo" className="vglasses__info">
-                <div >
-                  <h5>{this.state.name}</h5>
-                  <p class="my-3">
-                    <span
-                      class="mr-4"
-                    >
-                      ${this.state.price}
-                    </span>
-                  </p>
-                  <p>{this.state.desc}</p>
-                </div>
+                {this.renderInfo()}
               </div>
             </div>
           </div>
