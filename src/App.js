@@ -1,12 +1,11 @@
-import BaiTapKinh from './Components/BaiTapKinh';
+import BaiTapKinh from './Components/BaiTapKinh/BaiTapKinh';
 import './App.css';
 import BaiTapXeNangCao from './Components/BaiTapXeNangCao/BaiTapXeNangCao';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
      <BaiTapKinh />
-    <hr />
      <BaiTapXeNangCao />
     </div>
   );

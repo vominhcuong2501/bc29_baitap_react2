@@ -67,12 +67,13 @@ export default class BaiTapKinh extends Component {
 
   render() {
     return (
-      <div className="container vglasses py-3 " style={{ cursor: "pointer" }}>
+      <div className="container vglasses py-3 " style={{ cursor: "pointer", height: "100vh" }}>
+        <h1 className="text-center">BÀI TẬP KÍNH</h1>
         <div className="row ">
           <div className="col-6 vglasses__left">
             <div className="row">
               <div className="col-12">
-                <h1 className="mb-2">TRY GLASSES APP ONLINE</h1>
+                <h3 className="mb-2">TRY GLASSES APP ONLINE</h3>
               </div>
             </div>
             <div className="row" id="vglassesList">
