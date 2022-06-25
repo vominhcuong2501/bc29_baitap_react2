@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from "../../data/DataGlasses.json";
+import SanPhamKinh from "./SanPhamKinh";
 
 export default class BaiTapKinh extends Component {
   constructor(props) {
@@ -14,19 +15,8 @@ export default class BaiTapKinh extends Component {
   }
 
   renderGlass = () => {
-    return this.state.mangGlass.map((product, index) => {
-      return (
-        <div key={index} className="col-4 pt-5">
-          <button style={{ border: "none" }}>
-            <img
-              onClick={() => this.changeGlass(index)}
-              src={product.url}
-              height={100}
-              width={150}
-            />
-          </button>
-        </div>
-      );
+    return this.state.mangGlass.map((product) => {
+      return <SanPhamKinh product={product} changeGlass={this.changeGlass}/>
     });
   };
 
@@ -42,14 +32,14 @@ export default class BaiTapKinh extends Component {
     );
   };
 
-  changeGlass = (index) => {
+  changeGlass = (id) => {
     let imgSource = "./glassesImage/v1.png";
     let nameSource = "";
     let priceSource = "";
     let descSource = "";
 
     for (let i = 0; i < this.state.mangGlass.length; i++) {
-      if (index + 1 === this.state.mangGlass[i].id) {
+      if (id === this.state.mangGlass[i].id) {
         imgSource = this.state.mangGlass[i].url;
         nameSource = this.state.mangGlass[i].name;
         priceSource = this.state.mangGlass[i].price;
